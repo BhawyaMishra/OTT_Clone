@@ -1,0 +1,518 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #141414;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: white;
+  padding-top: 80px;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+  transition: background-color 0.4s ease;
+}
+
+.navbar.scrolled {
+  background-color: #141414;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#search {
+  padding: 6px 10px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid gray;
+  color: white;
+  border-radius: 3px;
+  outline: none;
+}
+
+#search:focus {
+  border-color: white;
+}
+
+.profile {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.logo {
+  color: #e50914;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* HERO BANNER */
+.banner {
+  position: relative;
+  height: 90vh;
+  background: url('../assets/images/banner.svg') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px;
+  transition: background-image 0.8s ease-in-out;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    #141414 10%,
+    rgba(20,20,20,0.6) 40%,
+    transparent 70%
+  );
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.banner-title {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.banner-description {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.banner-buttons .btn {
+  padding: 12px 26px;
+  margin-right: 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn {
+  background: white;
+  color: black;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-gray {
+  background: rgba(109,109,110,0.7);
+  color: white;
+}
+
+/* ROWS */
+.row {
+  margin-top: 40px;
+  padding: 0 60px;
+}
+
+.row h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* SCROLL CONTAINER */
+.row-posters {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0 30px;
+}
+
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row-container {
+  position: relative;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 20;
+  height: 100px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.row-container:hover .scroll-btn {
+  opacity: 1;
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+/* MOVIE CARD */
+.movie-card {
+  position: relative;
+  min-width: 180px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  display: block;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background-color: #2b2b2b;
+}
+
+/* HOVER EFFECT */
+.movie-card:hover {
+  transform: scale(1.15);
+  z-index: 10;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 6px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.3),
+    transparent
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.overlay-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.overlay-buttons button {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.overlay-buttons button:hover {
+  background: rgba(255,255,255,0.75);
+}
+
+.overlay-buttons .remove-btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid #888;
+}
+
+.overlay-buttons .rating {
+  margin-left: auto;
+  font-size: 12px;
+  color: #ccc;
+  background: none;
+  width: auto;
+}
+
+/* PROGRESS BAR */
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #e50914;
+}
+
+/* My List wrapper hidden when empty */
+#myListWrapper {
+  display: none;
+}
+
+/* ----- MODALS ----- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-box {
+  background: #181818;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 700px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.player-box {
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  text-align: center;
+}
+
+.player-box h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.player-box p {
+  color: #888;
+  font-size: 14px;
+}
+
+.info-box h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.info-box p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #2b2b2b;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  border-left: 4px solid #e50914;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 3000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* PROFILE PAGE */
+
+.profile-page {
+  background-color: #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profile-container {
+  text-align: center;
+}
+
+.profile-container h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.profiles {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.profile-card {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.profile-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.profile-card p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #aaa;
+}
+
+/* HOVER EFFECT */
+.profile-card:hover {
+  transform: scale(1.1);
+}
+
+.profile-card:hover img {
+  border: 3px solid white;
+}
+
+.profile-card:hover p {
+  color: white;
+}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .banner {
+    padding: 30px 20px;
+    height: 70vh;
+  }
+
+  .banner-title {
+    font-size: 36px;
+  }
+
+  .banner-description {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .row {
+    padding: 0 20px;
+  }
+
+  .movie-card {
+    min-width: 130px;
+  }
+
+  .scroll-btn {
+    display: none;
+  }
+
+  .profiles {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .profile-card img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  #search {
+    width: 110px;
+  }
+
+  .banner-title {
+    font-size: 28px;
+  }
+
+  .banner-buttons .btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    margin-right: 8px;
+  }
+}

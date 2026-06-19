@@ -1,0 +1,15 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="600" fill="#0a0505"/>
+<g opacity="0.25"><circle cx="200" cy="200" r="80" stroke="#888888" stroke-width="3" fill="none"/><path d="M120 280 L120 500 L280 500 L280 280 Z" stroke="#888888" stroke-width="3" fill="none"/><circle cx="170" cy="190" r="8" fill="#888888"/><circle cx="230" cy="190" r="8" fill="#888888"/></g>
+<rect width="400" height="600" fill="url(#vgrad)"/>
+<defs>
+<linearGradient id="vgrad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#0a0505" stop-opacity="0"/>
+<stop offset="65%" stop-color="#0a0505" stop-opacity="0"/>
+<stop offset="100%" stop-color="#000000" stop-opacity="0.85"/>
+</linearGradient>
+</defs>
+<text x="200" y="450" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="40" fill="#ffffff" letter-spacing="2">THE</text><text x="200" y="502" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="40" fill="#ffffff" letter-spacing="2">CONJURING</text>
+<rect x="20" y="20" width="100" height="32" rx="4" fill="#888888" opacity="0.9"/>
+<text x="70" y="42" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="14" fill="#000000">N SERIES</text>
+</svg>

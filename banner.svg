@@ -1,0 +1,17 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+<rect width="1600" height="900" fill="#0a0a0f"/>
+<g transform="translate(600,150) scale(4)"><g opacity="0.4"><circle cx="200" cy="120" r="300" stroke="#e50914" stroke-width="1.5" fill="none"/><circle cx="260" cy="128" r="270" stroke="#e50914" stroke-width="1.5" fill="none"/><circle cx="320" cy="136" r="240" stroke="#e50914" stroke-width="1.5" fill="none"/><circle cx="380" cy="144" r="210" stroke="#e50914" stroke-width="1.5" fill="none"/><circle cx="440" cy="152" r="180" stroke="#e50914" stroke-width="1.5" fill="none"/></g></g>
+<defs>
+<linearGradient id="bgrad" x1="0" y1="1" x2="0" y2="0">
+<stop offset="0%" stop-color="#000000" stop-opacity="1"/>
+<stop offset="50%" stop-color="#0a0a0f" stop-opacity="0.3"/>
+<stop offset="100%" stop-color="#0a0a0f" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="lgrad" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#000000" stop-opacity="0.9"/>
+<stop offset="50%" stop-color="#000000" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#bgrad)"/>
+<rect width="1600" height="900" fill="url(#lgrad)"/>
+</svg>
