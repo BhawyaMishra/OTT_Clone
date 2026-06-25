@@ -69,7 +69,7 @@ body {
 .banner {
   position: relative;
   height: 90vh;
-  background: url('../assets/images/banner.svg') center/cover no-repeat;
+  background: url('banner.svg') center/cover no-repeat;
   display: flex;
   align-items: flex-end;
   padding: 60px;
