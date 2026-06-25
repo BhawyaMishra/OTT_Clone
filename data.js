@@ -25,16 +25,16 @@ const movies = [
 ];
 
 const continueWatching = [
-  { id: 101, title: "Stranger Things", tmdb: "Stranger Things", tmdbType: "tv", fallback: "assets/images/poster1.svg", progress: 65 },
-  { id: 102, title: "Money Heist", tmdb: "Money Heist", tmdbType: "tv", fallback: "assets/images/poster5.svg", progress: 30 },
-  { id: 103, title: "Dark", tmdb: "Dark", tmdbType: "tv", fallback: "assets/images/poster16.svg", progress: 85 },
-  { id: 104, title: "Breaking Bad", tmdb: "Breaking Bad", tmdbType: "tv", fallback: "assets/images/poster3.svg", progress: 45 }
+  { id: 101, title: "Stranger Things", tmdb: "Stranger Things", tmdbType: "tv", fallback: "poster1.svg", progress: 65 },
+  { id: 102, title: "Money Heist", tmdb: "Money Heist", tmdbType: "tv", fallback: "poster5.svg", progress: 30 },
+  { id: 103, title: "Dark", tmdb: "Dark", tmdbType: "tv", fallback: "poster16.svg", progress: 85 },
+  { id: 104, title: "Breaking Bad", tmdb: "Breaking Bad", tmdbType: "tv", fallback: "poster3.svg", progress: 45 }
 ];
 
 const featured = [
-  { title: "Stranger Things", tmdb: "Stranger Things", tmdbType: "tv", fallback: "assets/images/banner.svg", description: "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, supernatural forces, and one strange little girl." },
-  { title: "Money Heist", tmdb: "Money Heist", tmdbType: "tv", fallback: "assets/images/banner.svg", description: "A criminal mastermind leads a group of robbers to take over the Royal Mint of Spain in an unprecedented heist." },
-  { title: "RRR", tmdb: "RRR", tmdbType: "movie", fallback: "assets/images/banner.svg", description: "A fearless revolutionary and a fierce protector unite against the British Raj in this larger-than-life action saga." },
-  { title: "Dark", tmdb: "Dark", tmdbType: "tv", fallback: "assets/images/banner.svg", description: "A missing child sets four families on a frantic hunt for answers as they uncover a small town's sinister secrets." },
-  { title: "Tumbbad", tmdb: "Tumbbad", tmdbType: "movie", fallback: "assets/images/banner.svg", description: "A mythological horror story about a goddess, her cursed son, and a family's endless greed for gold." }
+  { title: "Stranger Things", tmdb: "Stranger Things", tmdbType: "tv", fallback: "banner.svg", description: "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, supernatural forces, and one strange little girl." },
+  { title: "Money Heist", tmdb: "Money Heist", tmdbType: "tv", fallback: "banner.svg", description: "A criminal mastermind leads a group of robbers to take over the Royal Mint of Spain in an unprecedented heist." },
+  { title: "RRR", tmdb: "RRR", tmdbType: "movie", fallback: "banner.svg", description: "A fearless revolutionary and a fierce protector unite against the British Raj in this larger-than-life action saga." },
+  { title: "Dark", tmdb: "Dark", tmdbType: "tv", fallback: "banner.svg", description: "A missing child sets four families on a frantic hunt for answers as they uncover a small town's sinister secrets." },
+  { title: "Tumbbad", tmdb: "Tumbbad", tmdbType: "movie", fallback: "banner.svg", description: "A mythological horror story about a goddess, her cursed son, and a family's endless greed for gold." }
 ];
